@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Georama', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+@font-face {
+  font-family: 'Gilroy'; 
+  src: url('../src/assets/fonts/Gilroy-Bold.ttf');
+}
+@font-face {
+  font-family: 'GrandHotel'; 
+  src: url('../src/assets/fonts/GrandHotel-Regular.otf');
+}
+.header__nav-item_select {
+  color: #70BF50 !important;
+  text-decoration: solid underline #70bf50 5px !important;
+}
+.sleep {
+  width: 100%;
+  background: linear-gradient(270deg, #F8149B 0%, #B115FF 99.99%, rgba(196, 196, 196, 0) 100%);
+  opacity: 0.5;
+  padding-top: 69.5px !important;
+  padding-bottom: 69.5px !important;
+}
