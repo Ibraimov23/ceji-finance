@@ -37,9 +37,7 @@ const StyledAppContainer = styled.div`
 `;
 
 const StyledFooterContainer = styled.div`
-  max-width: 1743px;
-  padding: 61px 0px 20px 0px;
-  margin: 0 auto;
+  padding: 61px 7vh 20px 7vh;
   @media (max-width: 600px) { 
     padding: 36px 0px 41px 0px;
   }

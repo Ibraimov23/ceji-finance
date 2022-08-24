@@ -7,6 +7,8 @@ import { useTranslation } from "react-i18next";
 const StyledNavContainer = styled.div`
   max-width: 1200px;
   margin: auto;
+  @media (max-width: 1300px) {max-width: 1150px;}
+  @media (max-width: 1200px) {max-width: 1100px;}
 `;
 const StyledHeaderContent = styled.div`
   display: flex;
