@@ -4,68 +4,73 @@ import { PopUp } from './PopUp';
 import WalletIcon from '../../assets/imgs/wallet.png';
 import { useTranslation } from "react-i18next";
 
-
-const StyledConnectButton = styled.div`
-    display: flex;
-    gap: 20px;
-    display: flex;
-    align-items: center;
-    font-size: 20px;
-    padding: 10px;
-    width: 300px;
-    cursor: pointer;
-    border-radius: 15px;
-    transition: .05s ease;
-    margin-bottom: 10px;
-    & img {
-        height: 30px;
-    }
-    &:hover {
-        background: rgba(255, 255, 255, 0.05);
-    }
-    &:hover ._btnContinue img {
-        opacity: .5;
-    }
-    & ._btnContinue {
-        height: 100%;
-        flex-grow: 1;
-        & img {
-            float: right;
-            opacity: 0;
-            transition: .05s ease;
-        }
+const StyledStakeContent = styled.div`
+   @media (max-width: 600px) {
+        background: #131D32;
+        padding: 20px 12px 20px 12px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
     }
 `;
+
 
 const StyledStakeAmount = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 400px;
-    padding: 25px;
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
+    width: 570px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
     & input {
         background: transparent;
         border: 0;
-        outline: 0;
-        color: white;
-        font-size: 20px;
         flex: 1;
+        outline: none;
+        font-family: 'Gilroy';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 25px;
+        line-height: 30px;
+        color: rgba(255, 255, 255, 0.2);
     }
     & .currency {
+        position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 5px;
         font-weight: 600;
         opacity: .7;
+        & .currency__line {
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            height: 69px;
+            position: absolute;
+            left: -28px;
+        }
+        & .currency__text {
+            font-family: 'Gilroy';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 25px;
+            line-height: 30px;
+            color: rgba(255, 255, 255, 0.5);
+        }
     }
+    @media (max-width: 600px) {
+        width: 256px;
+        padding: 10px 20px 10px 20px;
+        & input{width: 230px;}
+        & .currency {
+            & .currency__line{height: 48px;}
+            & .currency__text{font-size: 20px;}
+        }
+    } 
 `;
 
 const StyledStakeButtonsRow = styled.div`
     display: flex;
-    justify-content: center;
+    justify-content: right;
     align-items: center;
     flex-direction: row;
     gap: 20px;
@@ -77,7 +82,8 @@ const StyledStakeItemButton = styled.a`
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 21px 25px;
+    padding: 12px 40px 12px 40px;
+    max-width: 75px;
     background: linear-gradient(
         90deg,
         rgba(255, 255, 255, 0.1) 0%,
@@ -86,7 +92,8 @@ const StyledStakeItemButton = styled.a`
         rgba(255, 255, 255, 0.2) 100%
     );
     background-size: 200%;
-    border-radius: 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     flex: 1;
     text-align: center;
     font-weight: 500;
@@ -108,6 +115,10 @@ const StyledStakeItemButton = styled.a`
     &:hover {
         background-position: right center;
     }
+    @media (max-width: 600px){
+        padding: 7px 40px 7px 40px;
+        max-width: 57px;
+    }
 `;
 
 
@@ -127,26 +138,26 @@ export const WindrawPopUp = ({version, visible, onClose, onConfirm, inStake }) =
         setAmount(+event.target.value);
     }
 
-    return version == "1" ? <PopUp label="Withdraw METO" visible={visible} onClose={ handleClose }>
-        <StyledStakeAmount>
+    return version == "1" ? <PopUp label="Withdraw" visible={visible} onClose={ handleClose }>
+        <StyledStakeContent><StyledStakeAmount>
             <input type="text" value={ amount } onChange={ handleInputChange }/>
             <div className="currency">
-                { inStake || '-' } METO
-                <img src={WalletIcon} alt="Wallet" />
+                <div className='currency__line'></div>
+                <span className='currency__text'>Ceji</span>
             </div>
         </StyledStakeAmount>
         <StyledStakeButtonsRow>
-            <StyledStakeItemButton onClick={ handleClose }>
+            <StyledStakeItemButton onClick={ handleClose } style={{background: 'linear-gradient(89.94deg, #171D2C 7.46%, #12254D 52.86%, #171E2C 99.94%)'}}>
                 <span>
                     Cancel
                 </span>
             </StyledStakeItemButton>
-            <StyledStakeItemButton onClick={ () => {handleConfirm() } } activeButton={ true }>
+            <StyledStakeItemButton onClick={ () => {handleConfirm() } } style={{background: 'linear-gradient(90.36deg, #171E2C 3.2%, #22311B 52.48%, #171F2D 99.73%)'}}>
                 <span>
                     Confirm
                 </span>
             </StyledStakeItemButton>
-        </StyledStakeButtonsRow>
+        </StyledStakeButtonsRow></StyledStakeContent>
     </PopUp>
      : null
 }

@@ -27,10 +27,5 @@ code {
   color: #70BF50 !important;
   text-decoration: solid underline #70bf50 5px !important;
 }
-.sleep {
-  width: 100%;
-  background: linear-gradient(270deg, #F8149B 0%, #B115FF 99.99%, rgba(196, 196, 196, 0) 100%);
-  opacity: 0.5;
-  padding-top: 69.5px !important;
-  padding-bottom: 69.5px !important;
-}
+.popUp__track__wallets_selectMetamask {border: 1px solid #FF8541 !important;}
+.popUp__track__wallets_selectWallet {border: 1px solid #4E8AFF !important;}

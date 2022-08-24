@@ -1,9 +1,6 @@
 import React, { useCallback, useState, useImperativeHandle, useEffect } from "react";
 import styled from "styled-components";
 import HelpIcon from "../../assets/imgs/help-icon.svg";
-import HarvestIcon from "../../assets/imgs/harvest.png";
-import WithdrawIcon from "../../assets/imgs/withdraw.png";
-import SleepIcon from "../../assets/imgs/zzz.svg";
 import { useTranslation } from "react-i18next";
 import { SC } from '../../SmartContracts';
 import '../../index.css';
@@ -229,7 +226,7 @@ export const StyledStake2ItemButton = styled.a`
     }
     ${(props) =>
       props.activeButton &&
-      "background: linear-gradient(89.96deg, #455B3C 12.11%, #264819 48.63%, #16280F 92.55%);"}
+      "background: linear-gradient(89.96deg, #314077 12.11%, #CBC6BC 92.55%) !important;"}
 ${(props) =>
       props.activeButton &&
       "&:hover { background-position: left center; background-size: 200%;}"}
@@ -438,7 +435,6 @@ export const StakeItem = ({
         }
 
     }, [ account, version, inStake ]);
-
     const approve = useCallback(async () => {
         let approval;
         if (version === "1") {
@@ -460,6 +456,7 @@ export const StakeItem = ({
             if (account && !approved) {
                 if (version === "1") {
                     if (await SC.allowance(account)) return setApproved(true);
+                   
                 } else if (version === "2") {
                     if (await SC.allowanceV2(account)) return setApproved(true);
                 } else if(version === "3") {
@@ -554,10 +551,10 @@ export const StakeItem = ({
               <span>
                   {t("STAKE.EARNED")}
               </span>
-              <p>{'-'}</p>
+              <p>{earned}</p>
           </StyledStakeItemTextWithButton>
 
-          <StyledStakeItemButton activeButton={ approved && canHarvest } onClick={ approved && canHarvest ? harvest : () => {} }>
+          <StyledStakeItemButton onClick={ approved && canHarvest ? harvest : () => {} }>
               <span>{t("STAKE.HARVEST")}</span>
           </StyledStakeItemButton>
 
@@ -576,11 +573,11 @@ export const StakeItem = ({
       { version === "1" ? <StyledStakeItemRowWithButton>
        <StyledStakeItemTextWithButton>
               <span> {t("STAKE.INSTAKE")}</span>
-              <p>{ '-'}</p>
+              <p>{inStake}</p>
           </StyledStakeItemTextWithButton>
       
 
-          <StyledStakeItemButton activeButton={ approved && canWithdraw} onClick={canWithdraw ? withdraw : () => {}}>
+          <StyledStakeItemButton activeButton={ null} onClick={canWithdraw ? withdraw : () => {}}>
              <span>{(activeButton && `${t("STAKE.STAKE")} METO`) ||
                   `${t("STAKE.WITHDRAW1")}`}{" "}</span>
           </StyledStakeItemButton>
@@ -600,19 +597,15 @@ export const StakeItem = ({
 
       { version === "1" ? <div>
       <StyledStakeItemRowWithButton>
-          <StyledStake2ItemButton onClick={ approved ? handleStake : () => {} } activeButton={ approved } style={{ width: '100%' }}>
+          <StyledStake2ItemButton onClick={ approved ? handleStake : () => {} } style={{ width: '100%' }}>
               <span>Stake</span>
           </StyledStake2ItemButton>
       </StyledStakeItemRowWithButton>
       <StyledStakeItemRowWithButton2>
-          <StyledStake2ItemButton onClick={ needToApprove ? (!approved ? approve : () => {}) : handleUseConnection } activeButton={ !approved } style={{ width: '100%' }}>
+          <StyledStake2ItemButton onClick={ needToApprove ? (!approved ? approve : () => {}) : handleUseConnection } activeButton={ approved } style={{ width: '100%',background: 'linear-gradient(89.96deg, #455B3C 12.11%, #16280F 51.45%, #26411B 85.24%)'}}>
                <span>{ needToApprove ? (approved ? 'Approved' : 'Approve') : t("STAKE.CONNECT") }</span>
           </StyledStake2ItemButton>
       </StyledStakeItemRowWithButton2>
-      { account ? 
-          <StyledStakeItemAccountId>Connected as { `${account.slice(0, 6)}...${account.slice(38, 42)}` }</StyledStakeItemAccountId>
-          : null
-      }
       </div> : <div>
       <StyledStakeItemRowWithButton>
           <StyledStake2ItemButton onClick={null } activeButton={  null} style={{ width: '100%' }}>

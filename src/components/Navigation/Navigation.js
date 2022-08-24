@@ -63,7 +63,9 @@ export const Navigation = ({ handleBurgerClick }) => {
                             <StyledHeaderNavItem><StyledHeaderNavItemA href="">Token</StyledHeaderNavItemA></StyledHeaderNavItem>
                         </StyledHeaderNavItems>
                     </StyledHeaderNavMenu>
-                    <StyledHeaderNavMobile><Burger /></StyledHeaderNavMobile>
+                    <StyledHeaderNavMobile>
+                          <Burger />
+                    </StyledHeaderNavMobile>
                 </StyledHeaderBlock>
                 <StyledHeaderLogo>
                     <StyledHeaderNavMenu><img src={Logo} height="50" /></StyledHeaderNavMenu>

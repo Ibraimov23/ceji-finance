@@ -17,34 +17,62 @@ const StyledPopUpContainer = styled.div`
 const StyledPopUpMessage = styled.div`
     position: relative;
     box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     color: white;
-    border-radius: 20px;
-    padding: 30px;
-    background: black;
+    border-radius: 18px;
+    padding: 23px 30px;
+    background: #131D32;
+    @media (max-width: 600px) {
+        background: unset;
+    }
 `;
 
 const StyledPopUpMessageCloseButton = styled.div`
     cursor: pointer;
-    position: absolute;
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     padding: 6px;
     right: 30px;
-    opacity: .5;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
     transition: .05s ease;
     & img {
-        width: 100%;
-        height: 100%;
+        width: 32px;
+        height: 32px;
     }
-    &:hover {
-        opacity: 1;
+    @media (max-width: 600px) {
+        background: #131D32;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+        padding: 11px;
     }
 `;
-
+const StyledPopUpMessageHeader = styled.div`
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: 600px) {
+        gap: 5px;
+    }
+`;
 const StyledPopUpMessageLabel = styled.div`
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 25px;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+    color: #70BF50;
+    margin-bottom: 19px;
+    @media (max-width: 600px) {
+        background: #131D32;
+        flex-grow: 1;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+        font-size: 26px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        margin-bottom: 17px;
+    }
 `;
 
 
@@ -55,10 +83,12 @@ export const PopUp = ({ children, label, visible, onClose }) => {
 
     return <StyledPopUpContainer style={{ display: visible ? 'flex' : 'none' }}>
         <StyledPopUpMessage>
-            <StyledPopUpMessageCloseButton onClick={ handleClose }>
-                <img src={ CloseIcon } alt="Close"/>
-            </StyledPopUpMessageCloseButton>
-            <StyledPopUpMessageLabel>{ label }</StyledPopUpMessageLabel>
+            <StyledPopUpMessageHeader>
+                <StyledPopUpMessageLabel>{ label }</StyledPopUpMessageLabel>
+                <StyledPopUpMessageCloseButton onClick={ handleClose }>
+                    <img src={ CloseIcon } alt="Close"/>
+                </StyledPopUpMessageCloseButton>
+            </StyledPopUpMessageHeader>
             { children }
         </StyledPopUpMessage>
     </StyledPopUpContainer>
