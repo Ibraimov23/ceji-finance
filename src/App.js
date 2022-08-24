@@ -204,12 +204,6 @@ function App() {
                     setWalletType(wallet);
                 }
             }
-             onCheked= {
-                async wallet => {
-                    if(value == 'Metamask'){setMetamask(value);setWallet(null);}
-                    else if(value == 'WalletConnect'){ setWallet(value);setMetamask(null);}
-                }
-            }
             ></WalletConnectPopUp>
             <StyledAppContainer>
                 { <Navigation />}
