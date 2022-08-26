@@ -26,7 +26,7 @@ const StyledFooterMenuContainer = styled.div`
 const StyledFooterContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  @media (max-width: 600px) {
+  @media (max-width: 1200px) {
     flex-direction: column;
   }
   
@@ -42,7 +42,7 @@ const StyledFooterLogo = styled.div`
     color: rgba(255, 255, 255, 0.9);
     padding-top: 49px;
   }
-  @media (max-width: 600px) {
+  @media (max-width: 1200px) {
     margin: auto;
     text-align: center;
     img {width: 146px;height: 46px;}
@@ -52,7 +52,7 @@ const StyledFooterLogo = styled.div`
 const StyledFooterContent = styled.div`
   display: flex;
   gap: 150px;
-  @media (max-width: 600px) {
+  @media (max-width: 1200px) {
     flex-direction: column;
     padding: 23px 70px 0px 16px;
     gap: 20px;
@@ -67,7 +67,7 @@ const StyledFooterBlock = styled.div`
     line-height: 42px;
     color: rgba(255, 255, 255, 0.9);
   }
-  @media (max-width: 600px) {
+  @media (max-width: 1200px) {
     p{font-size: 25px;}
   } 
 `;
@@ -83,7 +83,7 @@ const StyledFooterUl = styled.ul`
     line-height: 18px;
     color: rgba(255, 255, 255, 0.85);
   }
-  @media (max-width: 600px) {
+  @media (max-width: 1200px) {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
@@ -106,14 +106,14 @@ export const Footer = () => {
               <StyledFooterBlock>
                   <p>Contact</p>
                   <StyledFooterUl>
-                      <li><a>Main</a></li>
-                      <li><a>About</a></li>
-                      <li><a>OverView</a></li>
-                      <li><a>EcoSystem</a></li>
-                      <li><a>Token</a></li>
-                      <li><a>Platform</a></li>
-                      <li><a>RoadMap</a></li>
-                      <li><a>Team</a></li>
+                      <li><a href="https://ceji.io">Main</a></li>
+                      <li><a href="https://https://www.ceji.io/#comp-l2y9h6a7">About</a></li>
+                      <li><a href="https://https://www.ceji.io/#comp-l2y9h38c">OverView</a></li>
+                      <li><a href="https://#">EcoSystem</a></li>
+                      <li><a href="https://https://www.ceji.io/#comp-l2ya4nxv">Token</a></li>
+                      <li><a href="https://https://www.ceji.io/#comp-l2yb5ayz">Platform</a></li>
+                      <li><a href="https://https://www.ceji.io/#comp-l2ybxf1k">RoadMap</a></li>
+                      <li><a href="https://https://www.ceji.io/#comp-l2ydt2k1">Team</a></li>
                   </StyledFooterUl>
               </StyledFooterBlock>
               <StyledFooterBlock>

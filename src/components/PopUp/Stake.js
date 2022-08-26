@@ -31,7 +31,7 @@ const StyledStakeAmount = styled.div`
         font-weight: 700;
         font-size: 25px;
         line-height: 30px;
-        color: rgba(255, 255, 255, 0.2);
+        color: #fff;
     }
     & .currency {
         position: relative;

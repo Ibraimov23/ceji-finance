@@ -31,7 +31,7 @@ const StyledAppContainer = styled.div`
   padding-top: 4.7vh;
   margin: 0 auto;
   box-sizing: border-box;
-  @media (max-width: 600px) { 
+  @media (max-width: 1128px) { 
     padding: 43px 16px 43px 16px;
   }
 `;
