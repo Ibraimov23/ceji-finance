@@ -39,7 +39,7 @@
         "xhr2-cookies": "^1.1.0"
     },
     "scripts": {
-        "start": "node app",
+        "start": "react-app-rewired start",
         "build": "react-app-rewired build",
         "test": "react-app-rewired test",
         "eject": "react-scripts eject"

@@ -3,7 +3,7 @@ import Logo from "../../assets/imgs/logo.png";
 import styled from "styled-components";
 import { ReactComponent as Burger } from "../../assets/svg/burger.svg";
 import { useTranslation } from "react-i18next";
-
+import {$} from "jquery";
 const StyledNavContainer = styled.div`
   max-width: 1200px;
   margin: auto;
