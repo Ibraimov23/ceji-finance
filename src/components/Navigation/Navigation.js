@@ -130,9 +130,9 @@ export const Navigation = ({ handleBurgerClick }) => {
                     <StyledHeaderNavMenu>
                         <StyledHeaderNavItems>
                             <StyledHeaderNavItem><StyledHeaderNavItemA href="https://ceji.io">Main</StyledHeaderNavItemA></StyledHeaderNavItem>
-                            <StyledHeaderNavItem><StyledHeaderNavItemA href="https://https://www.ceji.io/#comp-l2y9h6a7">About</StyledHeaderNavItemA></StyledHeaderNavItem>
-                            <StyledHeaderNavItem><StyledHeaderNavItemA href="https://https://www.ceji.io/#comp-l2y9h38c">OverView</StyledHeaderNavItemA></StyledHeaderNavItem>
-                            <StyledHeaderNavItem><StyledHeaderNavItemA href="https://https://www.ceji.io/#comp-l2ya4nxv">Token</StyledHeaderNavItemA></StyledHeaderNavItem>
+                            <StyledHeaderNavItem><StyledHeaderNavItemA href="https://www.ceji.io/#comp-l2y9h6a7">About</StyledHeaderNavItemA></StyledHeaderNavItem>
+                            <StyledHeaderNavItem><StyledHeaderNavItemA href="https://www.ceji.io/#comp-l2y9h38c">OverView</StyledHeaderNavItemA></StyledHeaderNavItem>
+                            <StyledHeaderNavItem><StyledHeaderNavItemA href="https://www.ceji.io/#comp-l2ya4nxv">Token</StyledHeaderNavItemA></StyledHeaderNavItem>
                         </StyledHeaderNavItems>
                     </StyledHeaderNavMenu>
                     <StyledHeaderNavMobile>
@@ -142,13 +142,13 @@ export const Navigation = ({ handleBurgerClick }) => {
                         <StyledNavBurgerMenu className="burger-menu">
                             <ul class="nav-items">
                                 <li class="nav-item"><a href="https://ceji.io">Main</a></li>
-                                <li class="nav-item"><a href="https://https://www.ceji.io/#comp-l2y9h6a7">About</a></li>
-                                <li class="nav-item"><a href="https://https://www.ceji.io/#comp-l2y9h38c">OverView</a></li>
-                                <li class="nav-item"><a href="https://https://www.ceji.io/#comp-l2ya4nxv">Token</a></li>
+                                <li class="nav-item"><a href="https://www.ceji.io/#comp-l2y9h6a7">About</a></li>
+                                <li class="nav-item"><a href="https://www.ceji.io/#comp-l2y9h38c">OverView</a></li>
+                                <li class="nav-item"><a href="https://www.ceji.io/#comp-l2ya4nxv">Token</a></li>
                                 <li class="nav-item"><div className="select__row"></div><a className="select__item" href="#">Finance</a></li>
-                                <li class="nav-item"><a href="https://https://www.ceji.io/#comp-l2yb5ayz">Platform</a></li>
-                                <li class="nav-item"><a href="https://https://www.ceji.io/#comp-l2ybxf1k">RoadMap</a></li>
-                                <li class="nav-item"><a href="https://https://www.ceji.io/#comp-l2ydt2k1">Team</a></li>
+                                <li class="nav-item"><a href="https://www.ceji.io/#comp-l2yb5ayz">Platform</a></li>
+                                <li class="nav-item"><a href="https://www.ceji.io/#comp-l2ybxf1k">RoadMap</a></li>
+                                <li class="nav-item"><a href="https://www.ceji.io/#comp-l2ydt2k1">Team</a></li>
                             </ul>
                         </StyledNavBurgerMenu>
                     </StyledHeaderNavMobile>
@@ -160,9 +160,9 @@ export const Navigation = ({ handleBurgerClick }) => {
                     <StyledHeaderNavMenu>
                         <StyledHeaderNavItems>
                             <StyledHeaderNavItem><StyledHeaderNavItemA className="header__nav-item_select" href="#">Finance</StyledHeaderNavItemA></StyledHeaderNavItem>
-                            <StyledHeaderNavItem><StyledHeaderNavItemA href="https://https://www.ceji.io/#comp-l2yb5ayz">Platform</StyledHeaderNavItemA></StyledHeaderNavItem>
-                            <StyledHeaderNavItem><StyledHeaderNavItemA href="https://https://www.ceji.io/#comp-l2ybxf1k">RoadMap</StyledHeaderNavItemA></StyledHeaderNavItem>
-                            <StyledHeaderNavItem><StyledHeaderNavItemA href="https:://https://www.ceji.io/#comp-l2ydt2k1">Team</StyledHeaderNavItemA></StyledHeaderNavItem>
+                            <StyledHeaderNavItem><StyledHeaderNavItemA href="https://www.ceji.io/#comp-l2yb5ayz">Platform</StyledHeaderNavItemA></StyledHeaderNavItem>
+                            <StyledHeaderNavItem><StyledHeaderNavItemA href="https://www.ceji.io/#comp-l2ybxf1k">RoadMap</StyledHeaderNavItemA></StyledHeaderNavItem>
+                            <StyledHeaderNavItem><StyledHeaderNavItemA href="https://www.ceji.io/#comp-l2ydt2k1">Team</StyledHeaderNavItemA></StyledHeaderNavItem>
                         </StyledHeaderNavItems>
                     </StyledHeaderNavMenu>
                     <StyledHeaderNavMobile><img src={Logo} height="32" /></StyledHeaderNavMobile>

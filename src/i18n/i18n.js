@@ -29,7 +29,7 @@ i18n.use(initReactI18next).init({
           WITHDRAW2: "Withdraw All",
           STAKE: "Stake",
           CONNECT: "Connect Wallet",
-          HELPSTAKE: ""
+          HELPSTAKE: "Your deposit will be locked for 45 days. However, the rewards will always be available for withdrawal"
         },
         FARMING_LP: {
           TITLE: "Farming LP tokens",
@@ -40,7 +40,7 @@ i18n.use(initReactI18next).init({
           HARVEST: "Harvest",
           WITHDRAW: "Withdraw Dep",
           FARMING: "SOON...",
-          HELPLP: ""
+          HELPLP: "Your deposit is always available for withdrawal. However, the rewards will start unlocking after 30 days."
         },
         FARMING_NFT: {
           TITLE: "Farming CEJI NFTs",
@@ -52,7 +52,7 @@ i18n.use(initReactI18next).init({
           CLAIM: "Claim",
           CONNECT: "Connect Wallet",
           FARMING: "SOON...",
-          HELPNFT: ""
+          HELPNFT: "You can swap your NFT to CEJI at the current rate. You will immediately receive 10% CEJI... Unlock will start after CEJI listing, 15% per month."
         },
       },
     },

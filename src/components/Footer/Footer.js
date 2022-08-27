@@ -82,6 +82,7 @@ const StyledFooterUl = styled.ul`
     font-size: 18px;
     line-height: 18px;
     color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
   }
   @media (max-width: 1200px) {
     display: flex;
@@ -107,13 +108,13 @@ export const Footer = () => {
                   <p>Contact</p>
                   <StyledFooterUl>
                       <li><a href="https://ceji.io">Main</a></li>
-                      <li><a href="https://https://www.ceji.io/#comp-l2y9h6a7">About</a></li>
-                      <li><a href="https://https://www.ceji.io/#comp-l2y9h38c">OverView</a></li>
+                      <li><a href="https://www.ceji.io/#comp-l2y9h6a7">About</a></li>
+                      <li><a href="https://www.ceji.io/#comp-l2y9h38c">OverView</a></li>
                       <li><a href="https://#">EcoSystem</a></li>
-                      <li><a href="https://https://www.ceji.io/#comp-l2ya4nxv">Token</a></li>
-                      <li><a href="https://https://www.ceji.io/#comp-l2yb5ayz">Platform</a></li>
-                      <li><a href="https://https://www.ceji.io/#comp-l2ybxf1k">RoadMap</a></li>
-                      <li><a href="https://https://www.ceji.io/#comp-l2ydt2k1">Team</a></li>
+                      <li><a href="https://www.ceji.io/#comp-l2ya4nxv">Token</a></li>
+                      <li><a href="https://www.ceji.io/#comp-l2yb5ayz">Platform</a></li>
+                      <li><a href="https://www.ceji.io/#comp-l2ybxf1k">RoadMap</a></li>
+                      <li><a href="https://www.ceji.io/#comp-l2ydt2k1">Team</a></li>
                   </StyledFooterUl>
               </StyledFooterBlock>
               <StyledFooterBlock>

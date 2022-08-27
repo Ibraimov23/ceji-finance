@@ -4,6 +4,7 @@ import HelpIcon from "../../assets/imgs/help-icon.svg";
 import { useTranslation } from "react-i18next";
 import { SC } from '../../SmartContracts';
 import '../../index.css';
+import CloseIcon from '../../assets/imgs/close.png';
 
 const StyledStakeItemContainer = styled.div`
   min-width: 450px;
@@ -294,6 +295,8 @@ const StyledStakeItemAccountId = styled.div`
   border-radius: 7px;
 `;
 const StyledStakeItemHelp = styled.span`
+.i .tooltip{display:none;}
+@media (min-width: 1200px) {
 .i {
   position: relative;
   top: 2px;
@@ -304,14 +307,18 @@ const StyledStakeItemHelp = styled.span`
   border-radius: 4px;
   color: #fff;
   padding: 4px 4px 6px;
-  font-size: 12px;
-  line-height: 130%;
   position: absolute;
   left: calc(50% - 234px/2);
-  bottom: 38px;
-  width: 234px;
-  box-sizing: border-box;
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 23px;
   text-align: center;
+  bottom: 38px;
+  width: 250px;
+
+color: rgba(255, 255, 255, 0.9);
   }
   .i .icon {
     display: inline-block;
@@ -328,8 +335,96 @@ const StyledStakeItemHelp = styled.span`
     width: 38px;
   }
 }
+}
 `;
-
+const StyledInfoHelp = styled.div`
+.info .info__header .info__header_text,
+.info__content__item p,
+.info .info__header .info__header_close{display:none}
+@media (max-width: 600px) {
+  display: none;
+  position: fixed;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 650;
+  .info {
+    position: relative;
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    border-radius: 18px;
+    padding: 23px 30px;
+    background: unset;
+  }
+    .info .info__header {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    gap: 5px;
+  }
+  .info .info__header .info__header_text {
+    display: block;
+    background: rgb(19, 29, 50);
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-bottom: 17px;
+       p{
+          font-family: Gilroy;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 26px;
+          line-height: 48px;
+          color: rgb(112, 191, 80);
+        }
+    }
+    .info .info__header .info__header_close {
+      display: block;
+      background: rgb(19, 29, 50);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      padding: 11px;
+      width: 30px;
+      height: 30px;
+    }
+    .info__content {
+      background: rgb(19, 29, 50);
+      padding: 20px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+    }
+    .info__content__item {
+      display: flex;
+      -webkit-box-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      align-items: center;
+      width: 256px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      p{
+        display: block;
+        font-family: 'Gilroy';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 17px;
+        line-height: 26px;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.9);
+        animation: unset;
+      }
+    }
+  }
+`;
 export const StakeItem = ({
     version,
     earnedText,
@@ -355,6 +450,7 @@ export const StakeItem = ({
     let [ availableNft, setAvailableNft ] = useState(0);
     let [ remainingNft, setRemainingNft ] = useState(0);
     let [ balanceNft, setBalanceNft ] = useState(0);
+    let [ onClose, setClose ] = useState(false);
 
     const { t } = useTranslation();
 
@@ -365,6 +461,10 @@ export const StakeItem = ({
     const handleStake = useCallback(() => {
         onStake();
     }, [ onStake ])
+
+    const handleClose = useCallback(() => {
+      onClose(true);
+  }, [ onClose ]);
 
     const handleWindraw = useCallback(() => {
       onWindraw();
@@ -385,6 +485,8 @@ export const StakeItem = ({
           await SC.withdrawV2(account, SC.inStakeV2);
         }
     }, [ version, account ]);
+    
+    
 
     const claimOshi = useCallback(async () => {
       if (version === "3") {
@@ -450,7 +552,7 @@ export const StakeItem = ({
 
         updateData();
     }, [ version, updateData ]);
-
+      
     useEffect(() => {  
         (async () => {
             if (account && !approved) {
@@ -493,6 +595,7 @@ export const StakeItem = ({
         approved,
         setAPR
     ]);
+   
     return (
       <StyledStakeItem>
          {version == "1" || version == "2" ?
@@ -502,14 +605,28 @@ export const StakeItem = ({
                 <p>
                     {t("STAKE.TITLE")}
                 </p>
+                <StyledInfoHelp id="inform">
+              <div className="info">
+                <div className="info__header">
+                    <div className="info__header_text"><p>Info</p></div>
+                    <div className="info__header_close" onClick={() => document.getElementById('inform').style.display = 'none'}><img src={CloseIcon} /></div>
+                </div>
+                <div className="info__content">
+                    <div className="info__content__item">
+                        <p className="info__content__item_text">Your deposit will be locked for 45 days. However, the rewards will always be available for withdrawal</p>
+                    </div>
+                </div>
+              </div>
+            </StyledInfoHelp>
                 <StyledStakeItemHelp>
-               <span class="i">
-                   <img src={HelpIcon} alt="" />
+               <span class="i" onClick={() => document.getElementById('inform').style.display = 'flex'}>
+                   <img src={HelpIcon} alt=""  />
                    <span class="tooltip">			
-                        {t("STAKE.HELPSWAP")}
+                        {t("STAKE.HELPSTAKE")}
                     </span>
                 </span>
             </StyledStakeItemHelp>
+            
             </StyledStakeItemHeader>
             <StyledStakeItemRow>
                <StyledAPR>
@@ -526,7 +643,7 @@ export const StakeItem = ({
                   <span class="i">
                    <img src={HelpIcon} alt="" />
                    <span class="tooltip">			
-                        {t("FARMING_LP.HELPSWAP")}
+                        {t("FARMING_LP.HELPLP")}
                     </span>
                 </span>
                   </StyledStakeItemHelp>
@@ -626,7 +743,7 @@ export const StakeItem = ({
     <span class="i">
           <img src={HelpIcon} alt="" />
           <span class="tooltip">			
-          {t("FARMING_NFT.HELPSWAP")}
+          {t("FARMING_NFT.HELPNFT")}
     </span>
     </span>
     </StyledStakeItemHelp>
