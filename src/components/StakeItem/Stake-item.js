@@ -355,7 +355,6 @@ const StyledInfoHelp = styled.div`
   .info {
     position: relative;
     box-sizing: border-box;
-    border: 1px solid rgba(255, 255, 255, 0.2);
     color: white;
     border-radius: 18px;
     padding: 23px 30px;
