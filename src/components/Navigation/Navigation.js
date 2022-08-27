@@ -3,7 +3,6 @@ import Logo from "../../assets/imgs/logo.png";
 import styled from "styled-components";
 import { ReactComponent as Burger } from "../../assets/svg/burger.svg";
 import { useTranslation } from "react-i18next";
-import {$} from "jquery";
 const StyledNavContainer = styled.div`
   max-width: 1200px;
   margin: auto;
@@ -116,11 +115,12 @@ const StyledHeaderNavMobile = styled.div`
     display: block;
   } 
 `;
-
 export const Navigation = ({ handleBurgerClick }) => {
   const { t } = useTranslation();
-  const burger = () => {
-    $('.nav-burger,.burger-menu').toggleClass('active');
+  const burger =() => {
+    let element = document.querySelectorAll('.nav-burger, .burger-menu');
+    for (const el of element)
+    el.classList.toggle('active');
   }
   return (
     <header>
