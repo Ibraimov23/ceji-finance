@@ -349,7 +349,7 @@ const StyledInfoHelp = styled.div`
   -webkit-box-align: center;
   align-items: center;
   width: 100vw;
-  height: 100vh;
+  height: 2000px;
   background: rgba(0, 0, 0, 0.6);
   z-index: 650;
   .info {
