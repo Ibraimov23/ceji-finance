@@ -1,6 +1,6 @@
 import React, { useCallback, useState, useImperativeHandle, useEffect } from "react";
 import styled from "styled-components";
-import HelpIcon from "../../assets/imgs/help-icon.svg";
+import HelpIcon from "../../assets/imgs/help-icon.png";
 import { useTranslation } from "react-i18next";
 import { SC } from '../../SmartContracts';
 import '../../index.css';
