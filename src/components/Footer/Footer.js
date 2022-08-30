@@ -120,18 +120,18 @@ export const Footer = () => {
               <StyledFooterBlock>
                   <p>Docs</p>
                   <StyledFooterUl>
-                      <li><a>White Paper ( KR )</a></li>
-                      <li><a>White Paper ( EN )</a></li>
+                      <li><a href="https://www.ceji.io/_files/ugd/7e5c54_d27cfb6d01aa42cba55b1cee6b96b746.pdf">White Paper ( KR )</a></li>
+                      <li><a href="https://www.ceji.io/_files/ugd/7e5c54_5459d29a5cbb4c85853b1603a12e79ec.pdf">White Paper ( EN )</a></li>
                   </StyledFooterUl>
               </StyledFooterBlock>
               <StyledFooterBlock>
                   <p>Contact Us</p>
                   <StyledFooterUl>
-                      <li><a>no1business@hanmail.net</a></li>
-                      <li><a>Twitter</a></li>
-                      <li><a>Telegram</a></li>
-                      <li><a>Kakao</a></li>
-                      <li><a>Cafe</a></li>
+                      <li><a href="mailto:no1business@hanmail.net">no1business@hanmail.net</a></li>
+                      <li><a href="https://twitter.com/cejitoken">Twitter</a></li>
+                      <li><a href="https://t.me/cejitoken">Telegram</a></li>
+                      <li><a href="https://open.kakao.com/o/gNTghwfe">Kakao</a></li>
+                      <li><a href="https://cafe.naver.com/chu2byo">Cafe</a></li>
                   </StyledFooterUl>
               </StyledFooterBlock>
           </StyledFooterContent>

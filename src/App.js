@@ -80,7 +80,6 @@ const networks = {
         blockExplorerUrls: ["https://bscscan.com"]
     }
 };
-
 const changeNetwork = async ({ networkName, setError }) => {
     try {
          if (window.ethereum) {

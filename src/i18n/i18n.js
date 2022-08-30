@@ -40,7 +40,7 @@ i18n.use(initReactI18next).init({
           HARVEST: "Harvest",
           WITHDRAW: "Withdraw Dep",
           FARMING: "SOON...",
-          HELPLP: "Your deposit is always available for withdrawal. However, the rewards will start unlocking after 30 days."
+          HELPLP: "This service will be available soon"
         },
         FARMING_NFT: {
           TITLE: "Farming CEJI NFTs",
@@ -52,7 +52,7 @@ i18n.use(initReactI18next).init({
           CLAIM: "Claim",
           CONNECT: "Connect Wallet",
           FARMING: "SOON...",
-          HELPNFT: "You can swap your NFT to CEJI at the current rate. You will immediately receive 10% CEJI... Unlock will start after CEJI listing, 15% per month."
+          HELPNFT: "This service will be available soon"
         },
       },
     },
